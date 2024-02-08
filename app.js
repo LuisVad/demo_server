@@ -24,8 +24,8 @@ const createClient = () => {
 setInterval(createClient,5000);
 
 const createPets = () => {
-    const petsName = ["Juan", "Pulgoso", "Manchas", "Matias", "Zacarias", "Pulgas", "Pedro", "Alfonso", "Manuel", "Alejandro"];
-    const animalTypes = ["Dog", "Cat", "Bird", "Fish", "Hamster", "Turtle", "Rabbit", "Guinea Pig", "Snake", "Lizard"];
+    const petsName = ["Carsi", "Berlín", "Josa", "Guadalajara", "Smith", "Whisky", "Manolo", "Moscú", "Vladimir", "Lu-Chang"];
+    const animalTypes = ["Perro", "Gato", "Pájaro", "Pez", "Hamster", "Tortuga", "Conejo", "Cerdito", "Serpiente", "Loro"];
     
     const randomPetName = petsName[Math.floor(Math.random() * petsName.length)];
     const randomAnimalType = animalTypes[Math.floor(Math.random() * animalTypes.length)];
@@ -34,11 +34,11 @@ const createPets = () => {
 
     switch (randomAnimalType) {
         case "Dog":
-            const dogBreeds = ["San Bernardo", "Labrador", "Poodle", "Bulldog", "Chihuahua"];
+            const dogBreeds = ["French Pug", "Puli Húngaro", "Poodle", "Bulldog", "Sabueso Polaco"];
             randomBreed = dogBreeds[Math.floor(Math.random() * dogBreeds.length)];
             break;
         case "Cat":
-            const catBreeds = ["Siamese", "Persian", "Maine Coon", "Bengal", "Sphynx"];
+            const catBreeds = ["Korat", "Devon Rex", "Mist Australiano", "Bengalí", "Bombay"];
             randomBreed = catBreeds[Math.floor(Math.random() * catBreeds.length)];
             break;
         default:
@@ -51,7 +51,7 @@ const createPets = () => {
         if (err) throw err;
         const owner_id = clientResult[0].id;
         
-        const sql = `INSERT INTO pets (name, type, breed, owner_id, created_at) VALUES ('${randomPetName}', '${randomAnimalType}', '${randomBreed}', '${owner_id}', '2024-02-01 19:07:41')`;
+        const sql = `INSERT INTO pets (name, type, breed, owner_id, created_at) VALUES ('${randomPetName}', '${randomAnimalType}', '${randomBreed}', '${owner_id}', '2024-02-08 16:30:00')`;
 
         db.query(sql, (err, result) => {
             if (err) throw err;
